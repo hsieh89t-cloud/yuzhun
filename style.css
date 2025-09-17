@@ -1,0 +1,32 @@
+/* 黑底白字、iPhone 友善 */
+:root{
+  --bg:#000;--fg:#fff;--muted:#aaa;--accent:#00e0ff;--card:#111;--border:#222;--radius:14px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,'Noto Sans TC','PingFang TC',system-ui,sans-serif}
+header{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(0,0,0,.65);border-bottom:1px solid var(--border);padding:10px 12px 6px}
+h1{font-size:20px;margin:4px 0 8px}
+nav#channels{display:flex;gap:8px;overflow:auto;padding-bottom:6px}
+.tab{appearance:none;border:1px solid var(--border);background:#0b0b0b;color:var(--fg);padding:8px 12px;border-radius:999px;white-space:nowrap}
+.tab.active{border-color:var(--accent);box-shadow:0 0 0 2px rgba(0,224,255,.15) inset}
+main{padding:12px;display:grid;gap:12px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:12px}
+label{display:block;margin:12px 0 4px;color:var(--muted);font-size:13px}
+input,textarea{width:100%;padding:12px;border-radius:12px;border:1px solid var(--border);background:#090909;color:var(--fg);outline:none}
+input:focus,textarea:focus{border-color:var(--accent)}
+.actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+button{appearance:none;border:none;background:var(--accent);color:#001015;padding:10px 14px;border-radius:12px;font-weight:700}
+button.ghost{background:transparent;color:var(--fg);border:1px solid var(--border)}
+.settings summary{cursor:pointer;color:#9cf}
+#status{color:var(--muted);margin:8px 0 0;min-height:20px}
+.list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.item{border:1px solid var(--border);border-radius:12px;padding:10px;background:#0b0b0b}
+.item h3{margin:0 0 6px;font-size:16px}
+.item .meta{color:var(--muted);font-size:12px;margin-bottom:6px}
+.item .preview{color:#ddd;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.row{display:flex;gap:8px;align-items:center;justify-content:space-between}
+footer{padding:16px;text-align:center;color:var(--muted)}
+@supports (padding: max(0px)){
+  body{padding-bottom:max(16px,env(safe-area-inset-bottom))}
+  header{padding-top:max(10px,env(safe-area-inset-top))}
+}
