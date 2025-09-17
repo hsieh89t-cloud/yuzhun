@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>文章庫入口（黑底PWA）</title>
+  <meta name="theme-color" content="#000000" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>文章庫｜總入口</h1>
+  <nav id="channels">
+    <button class="tab active" data-sheet="文章庫">文章庫</button>
+    <button class="tab" data-sheet="文件庫">文件庫</button>
+    <button class="tab" data-sheet="日常">日常</button>
+  </nav>
+</header>
+
+<main>
+  <section class="card">
+    <div class="row">
+      <h2>快速存入</h2>
+      <button id="refreshBtn" class="ghost">重新載入</button>
+    </div>
+    <label>標題</label>
+    <input id="title" placeholder="文章標題（必填）" autocomplete="off"/>
+    <label>分類</label>
+    <input id="category" placeholder="例如：法務 / 哲學 / 心得"/>
+    <label>內容</label>
+    <textarea id="content" rows="9" placeholder="把你在 ChatGPT 的文章貼在這裡（自動暫存）"></textarea>
+    <div class="actions">
+      <button id="saveBtn">存入（GAS 啟用後送雲端；未啟用先本機暫存）</button>
+      <button id="clearDraft">清除草稿</button>
+    </div>
+    <details class="settings">
+      <summary>設定（入口表／GAS）</summary>
+      <label>總入口表（CSV 發佈網址）</label>
+      <input id="entryCsv" placeholder="貼上 Google 試算表『發佈到網路→CSV』的網址">
+      <label>GAS Web App 網址（選填）</label>
+      <input id="gasUrl" placeholder="重新部署後的 Web App URL">
+      <label>GAS Token（選填）</label>
+      <input id="gasToken" placeholder="例如：780920">
+      <div class="actions">
+        <button id="saveSettings">保存設定</button>
+        <button id="clearSettings" class="ghost">清除設定</button>
+      </div>
+    </details>
+    <p id="status" aria-live="polite"></p>
+  </section>
+
+  <section class="card">
+    <div class="row">
+      <h2>最近文章</h2>
+      <input id="search" placeholder="搜尋標題 / 內容（本地快篩）">
+    </div>
+    <ul id="list" class="list" aria-live="polite"></ul>
+    <button id="loadMore" class="ghost">載入更多</button>
+  </section>
+</main>
+
+<footer>
+  <small>離線可用｜PWA 黑底閱讀｜入口表可熱更新</small>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "entry_csv": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQYpmaztvrq3vdo8VeDhyP1yUYtEWjHeZyN9cN-0rg2PvqjdLfLnCQffKWUhja6aXo3OXcSmNoffPxR/pub?gid=0&single=true&output=csv",
+  "gas_web_app_url": "",
+  "gas_token": "",
+  "write_cmd": "寫入",
+  "read_cmd": "讀取"
+}
